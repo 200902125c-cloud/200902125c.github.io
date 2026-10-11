@@ -1,234 +1,700 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="My personal web development portfolio and projects.">
-  <title>My Portfolio | Aspiring Web Developer</title>
+
+  <meta name="description"
+        content="Riza Castillo's web development portfolio featuring practical web applications and personal projects.">
+
+  <title>Riza Castillo | Web Developer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f7f8fc;
-      --text: #20243a;
-      --muted: #60677b;
-      --accent: #6558d3;
-      --card: #ffffff;
+      --bg: #f7f6fc;
+      --surface: #ffffff;
+      --text: #24213d;
+      --muted: #77758d;
+      --accent: #7061e8;
+      --accent-dark: #5545ce;
+      --border: #e9e6f4;
+      --dark: #211d3b;
+      --radius: 20px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
     }
 
-    a { color: var(--accent); }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1100px, 88%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      padding: 20px 8%;
-      background: var(--card);
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    nav a {
-      text-decoration: none;
-      font-weight: bold;
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
     }
 
-    nav .links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
 
     .hero {
-      padding: 90px 8%;
-      background: #20243a;
-      color: white;
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(ellipse at 90% 10%, #e9e5ff 0, transparent 35%),
+        var(--bg);
     }
 
-    .hero p { max-width: 620px; color: #d9dcef; }
+    .hero-content {
+      max-width: 800px;
+    }
 
     .eyebrow {
-      color: #bcb4ff;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1px solid #dfd9ff;
+      background: #efedff;
+      color: var(--accent-dark);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
     }
 
-    h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.15; }
-    h2 { font-size: 30px; }
-    section { padding: 55px 8%; }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #37b779;
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin-top: 25px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -4px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 640px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
 
     .button {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 8px 8px 0 0;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 21px;
+      border-radius: 11px;
       background: var(--accent);
       color: white;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+      transition: transform 0.2s, background 0.2s;
     }
 
-    .button.secondary {
-      background: transparent;
-      border: 1px solid #aaa;
-      color: white;
+    .button:hover {
+      transform: translateY(-3px);
+      background: var(--accent-dark);
     }
+
+    .button-outline {
+      background: white;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .button-outline:hover {
+      background: #f0edff;
+      color: var(--accent-dark);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 8px;
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -1.5px;
+    }
+
+    .section-description {
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    /* PROJECT CARDS */
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
     }
 
-    .card {
-      background: var(--card);
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 5px 24px #20243a0b;
+    .project-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(36, 33, 61, 0.04);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(36, 33, 61, 0.10);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 245px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      background: #eeeafd;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-content {
+      padding: 26px;
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .project-card h3 {
+      margin-top: 8px;
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -0.6px;
+    }
+
+    .project-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 19px;
     }
 
     .tag {
       display: inline-block;
-      padding: 4px 10px;
-      margin: 4px 4px 4px 0;
-      border-radius: 20px;
-      background: #eeecff;
-      color: #4e43ac;
-      font-size: 13px;
+      padding: 6px 11px;
+      border-radius: 7px;
+      background: #efedff;
+      color: #5545bd;
+      font-size: 12px;
+      font-weight: 700;
     }
 
-    .muted { color: var(--muted); }
+    .project-footer {
+      margin-top: 23px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-    footer {
-      padding: 28px 8%;
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 25px;
+    }
+
+    .info-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    .info-card h3 {
+      font-size: 20px;
+      margin-bottom: 13px;
+    }
+
+    .info-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      padding: 9px 13px;
+      background: #f4f2ff;
+      border: 1px solid #e8e3ff;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      padding: 45px 30px;
+      border-radius: 24px;
+      background: var(--dark);
+      color: white;
       text-align: center;
-      background: #20243a;
+    }
+
+    .contact-card h2 {
+      margin-top: 10px;
+    }
+
+    .contact-card p {
+      max-width: 550px;
+      margin: 15px auto 0;
+      color: #c9c5dd;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .contact-links .button-outline {
+      background: transparent;
+      border-color: #514b70;
       color: white;
     }
 
-    footer a { color: #c7c0ff; }
+    .contact-links .button-outline:hover {
+      background: #373151;
+    }
 
-    @media (max-width: 540px) {
-      nav { align-items: flex-start; flex-direction: column; }
-      .hero { padding-top: 60px; padding-bottom: 60px; }
+    /* FOOTER */
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+
+    @media (max-width: 700px) {
+      .container {
+        width: 90%;
+      }
+
+      .nav-inner {
+        padding: 15px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .projects,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+
+      .project-content {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
-    <a href="#">MY PORTFOLIO</a>
-    <div class="links">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <div class="container nav-inner">
+      <a href="#" class="logo">RIZA<span>.</span>DEV</a>
+
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </nav>
 
+  <!-- HERO SECTION -->
   <header class="hero">
-    <div class="eyebrow">Aspiring Web Developer</div>
-    <h1>Hello, I'm Riza.</h1>
-    <p>
-      I enjoy turning ideas into useful web applications.
-      I have hands-on experience building personal projects
-      using HTML and Google Apps Script.
-    </p>
-    <a class="button" href="#projects">View My Projects</a>
-    <a class="button secondary" href="#contact">Contact Me</a>
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          Aspiring Web Developer
+        </div>
+
+        <h1>
+          Hello, I'm Riza.<br>
+          I build <span>useful web apps.</span>
+        </h1>
+
+        <p class="hero-description">
+          I'm an aspiring web developer who enjoys turning ideas into
+          practical digital solutions. Explore my projects, discover
+          my skills, and see what I've been building.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="button">
+            Explore My Projects &rarr;
+          </a>
+
+          <a href="#contact" class="button button-outline">
+            Get in Touch
+          </a>
+        </div>
+
+      </div>
+    </div>
   </header>
 
+  <!-- PROJECTS SECTION -->
   <section id="projects">
-    <h2>My Projects</h2>
-    <p class="muted">Here are some applications I have worked on independently.</p>
+    <div class="container">
 
-    <div class="projects">
-      <article class="card">
-        <h3>Laundry Shop Tracker</h3>
-        <p>
-          A web application designed to help track customer details,
-          payment status, laundry shop earnings, employee attendance,
-          and salary calculations.
+      <div class="section-heading">
+        <div class="section-label">My Work</div>
+        <h2>Featured Projects</h2>
+        <p class="section-description">
+          A collection of personal projects where I practice my skills
+          and build applications designed to solve real-world problems.
         </p>
-        <span class="tag">HTML</span>
-        <span class="tag">Google Apps Script</span>
-        <p class="muted">
-          Personal project — independently developed.
-        </p>
-        <!-- Add your laundry app demo link here when ready. -->
-      </article>
+      </div>
 
-      <article class="card">
-        <h3>What's Your Dating Style?</h3>
-        <p>
-          An interactive questionnaire inspired by a magazine.
-          Users answer questions and discover their dating style
-          based on their responses.
-        </p>
-        <span class="tag">HTML</span>
-        <span class="tag">Google Apps Script</span>
-        <p class="muted">
-          Personal project — independently developed.
-        </p>
-        <!-- Add your quiz demo link here when ready. -->
-      </article>
+      <div class="projects">
+
+        <!-- PROJECT 1: LAUNDRY SHOP -->
+        <article class="project-card">
+
+          <!-- Image displayed ONLY in the Laundry Shop Tracker card -->
+          <img
+            class="project-image"
+            src="./dating%20style.png"
+            alt="Project preview for Laundry Shop Tracker"
+            loading="lazy"
+            onerror="this.style.display='none';"
+          >
+
+          <div class="project-content">
+            <div class="project-number">PROJECT 01</div>
+
+            <h3>Laundry Shop Tracker</h3>
+
+            <p>
+              A web application designed to help manage laundry shop
+              operations, including customer records, payment status,
+              earnings, employee attendance, and salary calculations.
+            </p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">Google Apps Script</span>
+              <span class="tag">Web App</span>
+            </div>
+
+            <div class="project-footer">
+              Personal Project · Independently Developed
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: DATING STYLE QUIZ -->
+        <article class="project-card">
+
+          <div class="project-content">
+            <div class="project-number">PROJECT 02</div>
+
+            <h3>What's Your Dating Style?</h3>
+
+            <p>
+              An interactive personality quiz inspired by magazine-style
+              quizzes. Users answer eight questions and discover the
+              dating style that best matches their responses.
+            </p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Google Apps Script</span>
+            </div>
+
+            <div class="project-footer">
+              Personal Project · Independently Developed
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
   <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I'm an aspiring web developer who enjoys creating practical
-        applications and learning new technologies. My experience
-        includes building personal web projects and working with
-        Java during college.
-      </p>
-      <p>
-        I'm looking for opportunities to grow my skills, solve
-        real-world problems, and contribute to a development team.
-      </p>
-      <h3>Technical Skills</h3>
-      <span class="tag">HTML</span>
-      <span class="tag">Google Apps Script</span>
-      <span class="tag">Java</span>
-      <span class="tag">Web Application Development</span>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">Get to Know Me</div>
+        <h2>About Me</h2>
+        <p class="section-description">
+          A little about my background, interests, and technical skills.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="info-card">
+          <h3>My Journey</h3>
+
+          <p>
+            I'm an aspiring web developer who enjoys creating practical
+            applications and learning new technologies.
+          </p>
+
+          <p>
+            My experience includes developing personal web projects,
+            building applications with HTML and Google Apps Script,
+            and working with Java during college.
+          </p>
+
+          <p>
+            I'm eager to continue learning, solve real-world problems,
+            and contribute to a development team.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Technical Skills</h3>
+
+          <p>
+            Technologies and areas I've worked with:
+          </p>
+
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Google Apps Script</span>
+            <span class="skill">Java</span>
+            <span class="skill">Web Development</span>
+            <span class="skill">Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
+  <!-- CONTACT SECTION -->
   <section id="contact">
-    <h2>Let's Connect</h2>
-    <div class="card">
-      <p>
-        I'm open to entry-level web development opportunities
-        and opportunities to learn and grow.
-      </p>
-      <p>
-        Email: <a href="mailto:rzcstll1993@gmail.com">
-          rzcstll1993@gmail.com
-        </a>
-      </p>
-      <p>
-        GitHub:
-        <a href="https://github.com/200902125c">
-          github.com/200902125c
-        </a>
-      </p>
-      <p class="muted">
-        Remember to replace the example email and username with your own.
-      </p>
+    <div class="container">
+
+      <div class="contact-card">
+        <div class="section-label">Let's Connect</div>
+
+        <h2>Have an opportunity in mind?</h2>
+
+        <p>
+          I'm open to entry-level web development opportunities,
+          collaboration, and learning experiences. Feel free to reach out!
+        </p>
+
+        <div class="contact-links">
+          <a
+            class="button"
+            href="mailto:rzcstll1993@gmail.com"
+          >
+            Email Me &rarr;
+          </a>
+
+          <a
+            class="button button-outline"
+            href="https://github.com/200902125c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit My GitHub
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Riza Castillo · Personal Portfolio</p>
+    <div class="container">
+      <p>
+        &copy; 2026 Riza Castillo. Built with
+        <span>passion and code.</span>
+      </p>
+    </div>
   </footer>
 
 </body>
 </html>
+```
