@@ -78,11 +78,15 @@
       justify-content: space-between;
       gap: 20px;
     }
+    
+.logo {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
 
-    .logo {
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.7px;
     }
 
     .logo span {
@@ -491,10 +495,13 @@
 
     /* MOBILE RESPONSIVENESS */
 
-    @media (max-width: 700px) {
-      .container {
-        width: 90%;
-      }
+    @media (max-width: 600px) {
+  .logo {
+    font-size: 12px;
+    white-space: normal;
+    max-width: 230px;
+  }
+}
 
       .nav-inner {
         padding: 15px 0;
@@ -579,8 +586,7 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">Always learning,<span> always building.</span></a>
-
+      <a href="#" class="logo">Always learning, always building.</a>
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#about">About Me</a>
