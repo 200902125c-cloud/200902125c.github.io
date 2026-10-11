@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My personal web development portfolio and projects.">
+  <title>My Portfolio | Aspiring Web Developer</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --text: #20243a;
+      --muted: #60677b;
+      --accent: #6558d3;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 8%;
+      background: var(--card);
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .hero {
+      padding: 90px 8%;
+      background: #20243a;
+      color: white;
+    }
+
+    .hero p { max-width: 620px; color: #d9dcef; }
+
+    .eyebrow {
+      color: #bcb4ff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.15; }
+    h2 { font-size: 30px; }
+    section { padding: 55px 8%; }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 8px 8px 0 0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid #aaa;
+      color: white;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 24px #20243a0b;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 4px 4px 4px 0;
+      border-radius: 20px;
+      background: #eeecff;
+      color: #4e43ac;
+      font-size: 13px;
+    }
+
+    .muted { color: var(--muted); }
+
+    footer {
+      padding: 28px 8%;
+      text-align: center;
+      background: #20243a;
+      color: white;
+    }
+
+    footer a { color: #c7c0ff; }
+
+    @media (max-width: 540px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 60px; padding-bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">MY PORTFOLIO</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Aspiring Web Developer</div>
+    <h1>Hello, I'm [Your Name].</h1>
+    <p>
+      I enjoy turning ideas into useful web applications.
+      I have hands-on experience building personal projects
+      using HTML and Google Apps Script.
+    </p>
+    <a class="button" href="#projects">View My Projects</a>
+    <a class="button secondary" href="#contact">Contact Me</a>
+  </header>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p class="muted">Here are some applications I have worked on independently.</p>
+
+    <div class="projects">
+      <article class="card">
+        <h3>Laundry Shop Tracker</h3>
+        <p>
+          A web application designed to help track customer details,
+          payment status, laundry shop earnings, employee attendance,
+          and salary calculations.
+        </p>
+        <span class="tag">HTML</span>
+        <span class="tag">Google Apps Script</span>
+        <p class="muted">
+          Personal project — independently developed.
+        </p>
+        <!-- Add your laundry app demo link here when ready. -->
+      </article>
+
+      <article class="card">
+        <h3>What's Your Dating Style?</h3>
+        <p>
+          An interactive questionnaire inspired by a magazine.
+          Users answer questions and discover their dating style
+          based on their responses.
+        </p>
+        <span class="tag">HTML</span>
+        <span class="tag">Google Apps Script</span>
+        <p class="muted">
+          Personal project — independently developed.
+        </p>
+        <!-- Add your quiz demo link here when ready. -->
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I'm an aspiring web developer who enjoys creating practical
+        applications and learning new technologies. My experience
+        includes building personal web projects and working with
+        Java during college.
+      </p>
+      <p>
+        I'm looking for opportunities to grow my skills, solve
+        real-world problems, and contribute to a development team.
+      </p>
+      <h3>Technical Skills</h3>
+      <span class="tag">HTML</span>
+      <span class="tag">Google Apps Script</span>
+      <span class="tag">Java</span>
+      <span class="tag">Web Application Development</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's Connect</h2>
+    <div class="card">
+      <p>
+        I'm open to entry-level web development opportunities
+        and opportunities to learn and grow.
+      </p>
+      <p>
+        Email: <a href="mailto:rzcstll1993@gmail.com">
+          rzcstll1993@gmail.com
+        </a>
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/200902125c">
+          github.com/200902125c
+        </a>
+      </p>
+      <p class="muted">
+        Remember to replace the example email and username with your own.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Riza Castillo · Personal Portfolio</p>
+  </footer>
+
+</body>
+</html>
