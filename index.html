@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+  
 
   <style>
     :root {
@@ -578,6 +579,40 @@
     background: #f5f0ff;
     border-bottom: 1px solid var(--border);
 }
+
+
+    
+/* Dark navigation header */
+nav {
+  background: #17152b;
+  border-bottom: 1px solid #302b4d;
+}
+
+/* Motto */
+nav .logo {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+/* Navigation links */
+nav .nav-links a {
+  color: #d6d3e8;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Purple hover effect */
+nav .nav-links a:hover {
+  color: #a99bff;
+  transform: translateY(-2px);
+}
+
+/* Keyboard focus */
+nav .nav-links a:focus-visible {
+  color: #a99bff;
+  outline: 2px solid #a99bff;
+  outline-offset: 4px;
+}
+
   </style>
 </head>
 
