@@ -115,8 +115,80 @@
         var(--bg);
     }
 
-    .hero-content {
-      max-width: 800px;
+.hero .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 44px;
+}
+
+.hero-content {
+  min-width: 0;
+  max-width: 800px;
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  justify-self: end;
+}
+
+.code-window {
+  overflow: hidden;
+  border: 1px solid #40395f;
+  border-radius: 18px;
+  background: #211d3b;
+  color: #f7f5ff;
+  box-shadow: 0 24px 60px rgba(36, 33, 61, 0.18);
+}
+
+.code-window-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 18px;
+  background: #2d2848;
+  border-bottom: 1px solid #40395f;
+  font-size: 12px;
+}
+
+.window-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.window-dot.red { background: #ff7d91; }
+.window-dot.yellow { background: #ffd166; }
+.window-dot.green { background: #63d6a2; }
+
+.code-window pre {
+  padding: 24px;
+  overflow-x: auto;
+  font: 13px/1.9 Consolas, Monaco, monospace;
+  white-space: pre;
+}
+
+.code-key { color: #c5b8ff; }
+.code-string { color: #80e6b4; }
+.code-comment { color: #a6a0c5; }
+
+.floating-label {
+  position: absolute;
+  top: -16px;
+  right: -8px;
+  z-index: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
     }
 
     .eyebrow {
@@ -410,7 +482,27 @@
     @media (max-width: 700px) {
       .container {
         width: 90%;
+     .hero .container {
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.hero-visual {
+  max-width: 100%;
+  justify-self: stretch;
+}
+
+.code-window pre {
+  padding: 18px;
+  font-size: 11px;
+}
+
+.floating-label {
+  right: 8px;
+}
+      
       }
+      
 
       .nav-inner {
         padding: 15px 0;
@@ -491,39 +583,67 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="container">
-      <div class="hero-content">
+ 
+<!-- HERO SECTION -->
+<header class="hero">
+  <div class="container">
 
-        <div class="eyebrow">
-          <span class="status-dot"></span>
-          Network Operations Engineer | Aspiring Software Developer
-        </div>
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="status-dot"></span>
+        Network Operations Engineer | Aspiring Software Developer
+      </div>
 
-        <h1>
-          Hello, I'm Riza.<br>
-          I build <span>useful web apps.</span>
-        </h1>
+      <h1>
+        Hello, I'm Riza.<br>
+        I build <span>useful web apps.</span>
+      </h1>
 
-        <p class="hero-description">
-          I'm an aspiring web developer who enjoys turning ideas into
-          practical digital solutions. Explore my projects, discover
-          my skills, and see what I've been building.
-        </p>
+      <p class="hero-description">
+        I'm an aspiring web developer who enjoys turning ideas into
+        practical digital solutions. Explore my projects, discover
+        my skills, and see what I've been building.
+      </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="button">
-            Explore My Projects &rarr;
-          </a>
+      <div class="hero-buttons">
+        <a href="#projects" class="button">
+          Explore My Projects &rarr;
+        </a>
 
-          <a href="#contact" class="button button-outline">
-            Get in Touch
-          </a>
-        </div>
-
+        <a href="#contact" class="button button-outline">
+          Get in Touch
+        </a>
       </div>
     </div>
+
+    <!-- CODE PREVIEW ON THE RIGHT -->
+    <div class="hero-visual">
+      <div class="floating-label">&lt;/&gt; Web Development</div>
+
+      <div class="code-window">
+        <div class="code-window-top">
+          <span class="window-dot red"></span>
+          <span class="window-dot yellow"></span>
+          <span class="window-dot green"></span>
+          <span style="margin-left: 8px;">about-riza.js</span>
+        </div>
+
+        <pre><span class="code-comment">// A little about me</span>
+<span class="code-key">const</span> developer = {
+  name: <span class="code-string">"Riza"</span>,
+  currentRole: <span class="code-string">"Network Operations Engineer"</span>,
+  interests: [
+    <span class="code-string">"Web Development"</span>,
+    <span class="code-string">"Building useful apps"</span>
+  ],
+  mindset: <span class="code-string">"Always learning, always building."</span>
+};</pre>
+      </div>
+    </div>
+
+  </div>
+</header>
+
   </header>
 
   <!-- PROJECTS SECTION -->
