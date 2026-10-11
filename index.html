@@ -461,6 +461,19 @@
         transition: none !important;
       }
     }
+
+    ```css
+/* Dating Style Quiz image */
+.project-image {
+    width: 100%;
+    height: 245px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    background: #f5f0ff;
+    border-bottom: 1px solid var(--border);
+}
+```
   </style>
 </head>
 
@@ -564,10 +577,18 @@
           </div>
         </article>
 
-        <!-- PROJECT 2: DATING STYLE QUIZ -->
-        <article class="project-card">
+        ```html
+<!-- PROJECT 2: DATING STYLE QUIZ -->
+<article class="project-card">
 
-          <div class="project-content">
+    <img
+        class="project-image"
+        src="https://raw.githubusercontent.com/200902125c-cloud/200902125c.github.io/main/dating%20style.png"
+        alt="What's Your Dating Style quiz preview"
+        loading="lazy"
+    >
+
+    <div class="project-content">
             <div class="project-number">PROJECT 02</div>
 
             <h3>What's Your Dating Style?</h3>
