@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-  
 
   <style>
     :root {
@@ -79,15 +78,11 @@
       justify-content: space-between;
       gap: 20px;
     }
-    
-.logo {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: -0.3px;
-  white-space: nowrap;
 
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
     }
 
     .logo span {
@@ -120,93 +115,9 @@
         var(--bg);
     }
 
-    .hero .container {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
-      align-items: center;
-      gap: 48px;
-    }
-
     .hero-content {
       max-width: 800px;
-      min-width: 0;
     }
-
-    /* HERO CODE PREVIEW */
-    .hero-visual {
-      position: relative;
-      min-width: 0;
-      padding: 20px 0;
-    }
-
-    .code-card {
-      overflow: hidden;
-      color: #eeeaff;
-      background: #211d3b;
-      border: 1px solid #40395f;
-      border-radius: 18px;
-      box-shadow: 0 24px 60px rgba(36, 27, 83, 0.18);
-      transform: rotate(1deg);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .code-card:hover {
-      transform: translateY(-5px) rotate(0deg);
-      box-shadow: 0 30px 70px rgba(36, 27, 83, 0.24);
-    }
-
-    .code-header {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 15px 17px;
-      background: #2d2848;
-      border-bottom: 1px solid #40395f;
-    }
-
-    .code-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ff8b9b;
-    }
-
-    .code-dot:nth-child(2) { background: #ffd166; }
-    .code-dot:nth-child(3) { background: #69d6a5; }
-
-    .code-filename {
-      margin-left: 8px;
-      color: #c9c3e2;
-      font-size: 12px;
-    }
-
-    .code-card pre {
-      padding: 20px;
-      overflow-x: auto;
-      font-family: Consolas, Monaco, monospace;
-      font-size: 13px;
-      line-height: 1.9;
-      white-space: pre;
-    }
-
-    .code-purple { color: #b9a8ff; }
-    .code-green { color: #8ce0b5; }
-    .code-yellow { color: #ffda8a; }
-
-    .floating-tag {
-      position: absolute;
-      padding: 10px 14px;
-      color: var(--accent-dark);
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      box-shadow: 0 10px 30px rgba(36, 33, 61, 0.10);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .tag-one { top: 0; right: -10px; }
-    .tag-two { bottom: 0; left: -18px; }
 
     .eyebrow {
       display: inline-flex;
@@ -496,12 +407,10 @@
 
     /* MOBILE RESPONSIVENESS */
 
-   @media (max-width: 700px) {
+    @media (max-width: 700px) {
       .container {
         width: 90%;
       }
-
-}
 
       .nav-inner {
         padding: 15px 0;
@@ -518,20 +427,6 @@
       .hero {
         padding: 70px 0;
       }
-
-      .hero .container {
-        grid-template-columns: 1fr;
-        gap: 38px;
-      }
-
-      .hero-visual {
-        width: 100%;
-        max-width: 540px;
-        margin: 0 auto;
-      }
-
-      .tag-one { right: 0; }
-      .tag-two { left: -5px; }
 
       h1 {
         letter-spacing: -2px;
@@ -578,7 +473,6 @@
     background: #f5f0ff;
     border-bottom: 1px solid var(--border);
 }
-
   </style>
 </head>
 
@@ -587,7 +481,8 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">Always learning, always building.</a>
+      <a href="#" class="logo">RIZA<span>.</span></a>
+
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#about">About Me</a>
@@ -612,10 +507,9 @@
         </h1>
 
         <p class="hero-description">
-          I'm an IT professional with a growing passion for software
-          development. I enjoy building personal web applications,
-          exploring new technologies, and turning ideas into practical
-          digital solutions.
+          I'm an aspiring web developer who enjoys turning ideas into
+          practical digital solutions. Explore my projects, discover
+          my skills, and see what I've been building.
         </p>
 
         <div class="hero-buttons">
@@ -628,32 +522,6 @@
           </a>
         </div>
 
-      </div>
-
-      <div class="hero-visual" aria-label="Code preview illustration">
-        <div class="code-card">
-          <div class="code-header">
-            <span class="code-dot"></span>
-            <span class="code-dot"></span>
-            <span class="code-dot"></span>
-            <span class="code-filename">about-riza.js</span>
-          </div>
-          <pre><code><span class="code-purple">const</span> developer = {
-  name: <span class="code-green">"Riza"</span>,
-  currentRole: <span class="code-green">"Network Operations Engineer"</span>,
-  interests: [
-    <span class="code-yellow">"Web Development"</span>,
-    <span class="code-yellow">"Software Engineering"</span>
-  ],
-  languages: [
-    <span class="code-green">"Java"</span>,
-    <span class="code-green">"Python"</span>
-  ],
-  mindset: <span class="code-green">"Always learning"</span>
-};</code></pre>
-        </div>
-        <div class="floating-tag tag-one">&lt;/&gt; Web Development</div>
-        <div class="floating-tag tag-two">✦ Always Learning</div>
       </div>
     </div>
   </header>
@@ -755,7 +623,7 @@
           <h3>My Journey</h3>
 
           <p>
-            My journey into web development comes from my curiosity about technology and my passion for building useful applications. While working as a Network Operations Engineer, I have become increasingly interested in web development and software engineering.
+            My journey into web development comes from my curiosity about technology and my passion for building useful applications.As a Computer Science graduate, I have a foundation in programming, including Java and Python.While working as a Network Operations Engineer, I have become increasingly interested in web development and software engineering.
           </p>
 
           <p>
@@ -776,7 +644,6 @@
             <span class="skill">CSS</span>
             <span class="skill">Google Apps Script</span>
             <span class="skill">Java</span>
-            <span class="skill">Python</span>
             <span class="skill">Web Development</span>
             <span class="skill">Problem Solving</span>
           </div>
